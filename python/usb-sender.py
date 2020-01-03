@@ -13,10 +13,9 @@ import threading
 
 import psutil
 
-#pip install python3_xlib python-xlib
+# pip install python3_xlib python-xlib
 # pip install pyautogui
-# sudo pip install pil
-#sudo apt-get install scrot
+# sudo apt-get install scrot
 
 # Rpi
 # sudo pip3 install Pillow
