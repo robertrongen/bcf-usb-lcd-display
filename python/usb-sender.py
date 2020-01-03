@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 from __future__ import print_function
-from PIL import Image, ImageFont, ImageDraw
+import Image, ImageFont, ImageDraw
 import binascii
 import base64
 #import pyautogui
