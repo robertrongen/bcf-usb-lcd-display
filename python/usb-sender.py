@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import print_function
 import PIL
-import image, imagefont, imagedraw
+import Image, ImageFont, ImageDraw
 import binascii
 import base64
 #import pyautogui
@@ -19,7 +19,7 @@ import psutil
 # sudo apt-get install scrot
 
 # Rpi
-# sudo pip3 install Pillow
+# sudo pip3 install image
 # sudo apt-get install libopenjp2-7
 # sudo apt-get install -y pngtools libtiff-dev libtiff5
 # pip install pyautogui
