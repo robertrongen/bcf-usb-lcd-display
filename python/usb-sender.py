@@ -170,6 +170,8 @@ ser = False
 while True:
     try:
         ser = serial_open("/dev/ttyUSB0")
+        # ser = serial_open("/COM5")
+
     except Exception as e:
         print("Cannot open port: " + str(e))
         time.sleep(1)
