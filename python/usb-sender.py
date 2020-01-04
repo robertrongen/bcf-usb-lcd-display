@@ -8,8 +8,8 @@ import base64
 # import mss
 # import mss.tools
 import time
-# import serial
-from serial import Serial
+import serial
+# from serial import Serial
 import threading
 
 import psutil
