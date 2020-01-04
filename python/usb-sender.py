@@ -4,11 +4,12 @@ from __future__ import print_function
 from PIL import Image, ImageFont, ImageDraw
 import binascii
 import base64
-#import pyautogui
-#import mss
-#import mss.tools
+# import pyautogui
+# import mss
+# import mss.tools
 import time
 import serial
+from serial import Serial
 import threading
 
 import psutil
@@ -18,7 +19,7 @@ import psutil
 # sudo apt-get install scrot
 
 # Rpi
-# sudo pip3 install image
+# sudo pip3 install Pillow
 # sudo apt-get install libopenjp2-7
 # sudo apt-get install -y pngtools libtiff-dev libtiff5
 # pip install pyautogui
