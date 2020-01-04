@@ -9,7 +9,7 @@ import base64
 # import mss.tools
 import time
 import serial
-from serial import Serial
+from Serial import serial
 import threading
 
 import psutil
