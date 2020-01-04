@@ -143,7 +143,7 @@ def screen_draw():
 
         return (img, 0.1)
     else:
-        img = Image.open("test.png")
+        img = Image.open("qr-code-logo-1.png")
         img = img.resize((128, 128))
         return (img, 0.1)
 
