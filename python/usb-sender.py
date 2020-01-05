@@ -4,6 +4,7 @@ from __future__ import print_function
 from PIL import Image, ImageFont, ImageDraw
 import binascii
 import base64
+#https://pypi.org/project/qrcode/
 import qrcode
 from qrcode.image.pure import PymagingImage
 # import pyautogui
@@ -85,10 +86,18 @@ def screen_cycle(dir):
     screen_current += dir
     #print("screen cycle:" + str(screen_current))
 
+
 def qrImage(_orderId):
     #qrImage = "qr-code-logo-" + str(_orderId) + ".png"
-    #print("qrImage:" + str(qrImage))
+    qr = qrcode.QRCode(
+        version=5,  #The version parameter is an integer from 1 to 40 that controls the size of the QR Code
+                    #the smallest, version 1, is a 21x21 matrix
+        error_correction=qrcode.constants.ERROR_CORRECT_M,
+        box_size=4,
+        border=4,
+    )
     url = 'https://blokko.blockchainadvies.nu/receive-order.html?order=' + str(_orderId)
+    qr.add_data(url)
     qrImage = qrcode.make(url, image_factory=PymagingImage)
 
     return qrImage
@@ -131,7 +140,7 @@ def screen_draw():
         # Print QR code with Order ID
         #img = Image.open("test.png")
         img = qrImage(orderId)
-        img = img.resize((128, 128))
+        #img = img.resize((128, 128))
         return (img, 0.1)
 
     else:
