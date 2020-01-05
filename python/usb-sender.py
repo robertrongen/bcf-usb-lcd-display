@@ -5,6 +5,7 @@ from PIL import Image, ImageFont, ImageDraw
 import binascii
 import base64
 import qrcode
+from qrcode.image.pure import PymagingImage
 # import pyautogui
 # import mss
 # import mss.tools
@@ -88,7 +89,7 @@ def qrImage(_orderId):
     #qrImage = "qr-code-logo-" + str(_orderId) + ".png"
     #print("qrImage:" + str(qrImage))
     url = 'https://blokko.blockchainadvies.nu/receive-order.html?order=' + str(_orderId)
-    qrImage = qrcode.make(url)
+    qrImage = qrcode.make(url, image_factory=PymagingImage)
     return qrImage
 
 orderId = 1
