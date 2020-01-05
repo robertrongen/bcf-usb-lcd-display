@@ -4,11 +4,12 @@ from __future__ import print_function
 from PIL import Image, ImageFont, ImageDraw
 import binascii
 import base64
-#import pyautogui
-#import mss
-#import mss.tools
+# import pyautogui
+# import mss
+# import mss.tools
 import time
 import serial
+# from serial import Serial
 import threading
 
 import psutil
@@ -177,6 +178,8 @@ ser = False
 while True:
     try:
         ser = serial_open("/dev/ttyUSB0")
+        # ser = serial_open("/COM5")
+
     except Exception as e:
         print("Cannot open port: " + str(e))
         time.sleep(1)
