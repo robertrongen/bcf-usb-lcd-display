@@ -81,11 +81,11 @@ screen_current = 2
 def screen_cycle(dir):
     global screen_current
     screen_current += dir
-    print("screen cycle:" + str(screen_current))
+    #print("screen cycle:" + str(screen_current))
 
 def qrImage(_orderId):
-    qrImage = "qr-code-" + str(_orderId) + ".png"
-    print("qrImage:" + str(qrImage))
+    qrImage = "qr-code-logo-" + str(_orderId) + ".png"
+    #print("qrImage:" + str(qrImage))
     return qrImage
 
 orderId = 1
@@ -150,6 +150,7 @@ def screen_draw():
 
         return (img, 0.1)
     else:
+        # Print QR code with Order ID
         img = Image.open(qrImage(orderId))
         img = img.resize((128, 128))
         return (img, 0.1)
@@ -182,7 +183,7 @@ while True:
 
     except Exception as e:
         print("Cannot open port: " + str(e))
-        time.sleep(1)
+        time.sleep(10)
 
     print("Port opened")
 
