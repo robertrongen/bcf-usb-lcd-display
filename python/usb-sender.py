@@ -4,6 +4,7 @@ from __future__ import print_function
 from PIL import Image, ImageFont, ImageDraw
 import binascii
 import base64
+import qrcode
 # import pyautogui
 # import mss
 # import mss.tools
@@ -84,8 +85,9 @@ def screen_cycle(dir):
     #print("screen cycle:" + str(screen_current))
 
 def qrImage(_orderId):
-    qrImage = "qr-code-logo-" + str(_orderId) + ".png"
+    #qrImage = "qr-code-logo-" + str(_orderId) + ".png"
     #print("qrImage:" + str(qrImage))
+    qrImage = qrcode.make('https://blokko.blockchainadvies.nu/receive-order.html?order=' + str(_orderId))
     return qrImage
 
 orderId = 1
