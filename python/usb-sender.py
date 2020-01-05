@@ -82,6 +82,13 @@ def screen_cycle(dir):
     screen_current += dir
     print("screen cycle:" + str(screen_current))
 
+def qrImage(_orderId):
+    qrImage = "qr-code-" + str(_orderId) + ".png"
+    print("qrImage:" + str(qrImage))
+    return qrImage
+
+orderId = 1
+
 def screen_draw():
     if screen_current == 0:
         # area = (500, 500, 628, 628)
@@ -142,7 +149,7 @@ def screen_draw():
 
         return (img, 0.1)
     else:
-        img = Image.open("test.png")
+        img = Image.open(qrImage(orderId))
         img = img.resize((128, 128))
         return (img, 0.1)
 
