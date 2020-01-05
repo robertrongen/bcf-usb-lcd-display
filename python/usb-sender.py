@@ -58,7 +58,8 @@ def display_image(img, ser):
     global orientation
     #img = img.rotate(angle[orientation])
 
-    pixels = img.load()
+    #pixels = img.load()
+    pixels = img
 
     byte_array = [0]*(16*128)
     index = 0
