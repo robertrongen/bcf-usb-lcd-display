@@ -44,7 +44,7 @@ def serial_open(port):
 
 def display_image(img, ser):
     #print(im.format, im.size, im.mode)
-    img = img.convert('1') # convert image to black and white
+    #img = img.convert('1') # convert image to black and white
 
     angle = {
         0: 0,
