@@ -126,6 +126,12 @@ def screen_draw():
         return (img, 0.1)
     # NETWORK
     if screen_current == 2:
+        # Print QR code with Order ID
+        img = Image.open(qrImage(orderId))
+        img = img.resize((128, 128))
+        return (img, 0.1)
+
+    else:
         img = Image.new("RGB", (128, 128), (255,255,255))
         font = ImageFont.truetype("UbuntuMono-Regular.ttf", 20)
         smaller = ImageFont.truetype("UbuntuMono-Regular.ttf", 15)
@@ -151,11 +157,6 @@ def screen_draw():
         sizex, sizey = img_gear.size
         img.paste(img_gear, (x, y, x + sizex, y + sizey))
 
-        return (img, 0.1)
-    else:
-        # Print QR code with Order ID
-        img = Image.open(qrImage(orderId))
-        img = img.resize((128, 128))
         return (img, 0.1)
 
 def serial_command(cmd):
