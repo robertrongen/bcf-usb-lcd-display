@@ -87,7 +87,8 @@ def screen_cycle(dir):
 def qrImage(_orderId):
     #qrImage = "qr-code-logo-" + str(_orderId) + ".png"
     #print("qrImage:" + str(qrImage))
-    qrImage = qrcode.make('https://blokko.blockchainadvies.nu/receive-order.html?order=' + str(_orderId))
+    url = 'https://blokko.blockchainadvies.nu/receive-order.html?order=' + str(_orderId)
+    qrImage = qrcode.make(url)
     return qrImage
 
 orderId = 1
