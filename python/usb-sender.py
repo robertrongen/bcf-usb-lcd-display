@@ -90,6 +90,7 @@ def qrImage(_orderId):
     #print("qrImage:" + str(qrImage))
     url = 'https://blokko.blockchainadvies.nu/receive-order.html?order=' + str(_orderId)
     qrImage = qrcode.make(url, image_factory=PymagingImage)
+
     return qrImage
 
 orderId = 1
@@ -128,7 +129,8 @@ def screen_draw():
     # NETWORK
     if screen_current == 2:
         # Print QR code with Order ID
-        img = Image.open(qrImage(orderId))
+        #img = Image.open("test.png")
+        img = qrImage(orderId)
         img = img.resize((128, 128))
         return (img, 0.1)
 
