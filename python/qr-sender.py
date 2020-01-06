@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-#from __future__ import print_function
+from __future__ import print_function
 import binascii
 import base64
 import time
@@ -18,7 +18,7 @@ from qrcode.image.pure import PymagingImage
 #pip install pyserial
 import serial
 
-#import psutil
+import psutil
 
 orientation = 0
 
@@ -77,7 +77,6 @@ orderId = 1
 
 def screen_draw():
     # Print QR code with Order ID
-    img = Image.new("RGB", (128, 128), (255,255,255))
     img = Image.open("qr-code-logo-1.png")
     img = img.resize((128, 128))
     if type(img) == int:
