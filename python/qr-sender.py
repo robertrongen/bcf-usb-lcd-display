@@ -70,7 +70,7 @@ orderId = 1
 
 def screen_draw():
     # Print QR code with Order ID
-    img = Image.open("qr-code-logo-1.png")
+    img = Image.open("../img/qr-code-logo-1.png")
     img = img.resize((128, 128))
     #img = Image.new("RGB", (128, 128), (255,255,255))
     #img = qrImage(orderId)
