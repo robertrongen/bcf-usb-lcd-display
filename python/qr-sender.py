@@ -1,10 +1,13 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+#import sub-qrorder
 from __future__ import print_function
 import binascii
 import base64
 import time
 import threading
+
+import importlib
 
 #pip install qrcode[pil]
 #pip install git+git://github.com/ojii/pymaging.git#egg=pymaging 
