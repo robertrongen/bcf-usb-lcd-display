@@ -78,8 +78,9 @@ orderId = 1
 def screen_draw():
     # Print QR code with Order ID
     #img = Image.open("test.png")
-    img = qrImage(orderId)
-    #img = img.resize((128, 128))
+    img = Image.open("qr-code-logo-1.png")
+    img = img.resize((128, 128))
+    #img = qrImage(orderId)
     return (img, 0.1)
 
 def serial_command(cmd):
