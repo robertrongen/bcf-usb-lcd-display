@@ -70,7 +70,7 @@ def qrImage(_orderId):
     qr.add_data(url)
     #qrImage = qrcode.make(url, image_factory=PymagingImage)
     qrImage = qrcode.make('Some data here', image_factory=PymagingImage)
-
+    print qrImage
     return qrImage
 
 orderId = 1
