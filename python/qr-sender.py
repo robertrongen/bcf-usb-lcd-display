@@ -78,7 +78,7 @@ def screen_draw():
 def serial_command(cmd):
     print(cmd)
 
-def display_qr()
+def display_qr():
     print("Opening port")
     ser = False
 

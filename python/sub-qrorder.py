@@ -3,10 +3,9 @@
 import time
 import datetime
 import paho.mqtt.client as mqtt
+
 import importlib
 importlib.import_module('qr-sender')
-
-orderId = 1
 
 # Define event handlers
 
@@ -16,9 +15,9 @@ def on_connect(mqtt_client, obj, flags, rc):
 
 def on_message(mqtt_client, obj, msg):
     message = msg.payload.decode()
-    temp = float(message) # + 100
+    orderId = float(message)
     print("Topic: "+msg.topic+" Payload: "+message)
-    print(datetime.datetime.now())
+    #print(datetime.datetime.now())
     display_qr()
     #flp.print_str(message)
     #flp.show()
