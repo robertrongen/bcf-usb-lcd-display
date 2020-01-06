@@ -7,8 +7,6 @@ import base64
 import time
 import threading
 
-import importlib
-
 #pip install qrcode[pil]
 #pip install git+git://github.com/ojii/pymaging.git#egg=pymaging 
 #pip install git+git://github.com/ojii/pymaging-png.git#egg=pymaging-png
@@ -69,8 +67,6 @@ def qrImage(_orderId):
     print(qrImage)
     return qrImage
 
-orderId = 1
-
 def screen_draw():
     # Print QR code with Order ID
     img = Image.open("../img/qr-code-logo-1.png")
@@ -82,29 +78,30 @@ def screen_draw():
 def serial_command(cmd):
     print(cmd)
 
-print("Opening port")
-ser = False
+def display_qr()
+    print("Opening port")
+    ser = False
 
-while True:
-    try:
-        ser = serial_open("/dev/ttyUSB0")
-        #ser = serial_open("/COM5")
-
-    except Exception as e:
-        print("Cannot open port: " + str(e))
-        time.sleep(10)
-
-    print("Port opened")
-
-    while (serial):
-        img, delay = screen_draw()
-
+    while True:
         try:
-            display_image(img, ser)
+            ser = serial_open("/dev/ttyUSB0")
+            #ser = serial_open("/COM5")
 
         except Exception as e:
-            print(str(e))
-            ser = False
-            break
+            print("Cannot open port: " + str(e))
+            time.sleep(10)
 
-        time.sleep(delay)
+        print("Port opened")
+
+        while (serial):
+            img, delay = screen_draw()
+
+            try:
+                display_image(img, ser)
+
+            except Exception as e:
+                print(str(e))
+                ser = False
+                break
+
+            time.sleep(delay)

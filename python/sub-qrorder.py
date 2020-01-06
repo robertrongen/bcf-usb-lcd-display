@@ -3,6 +3,7 @@
 import time
 import datetime
 import paho.mqtt.client as mqtt
+import importlib
 importlib.import_module('qr-sender')
 
 orderId = 1
