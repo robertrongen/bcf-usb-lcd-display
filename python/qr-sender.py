@@ -32,11 +32,10 @@ def serial_open(port):
     #ser.isOpen()
 
 def display_image(img, ser):
-    #print(im.format, im.size, im.mode)
-    #img = img.convert('1') # convert image to black and white
+    img = img.convert('1') # convert image to black and white
 
-    #pixels = img.load()
-    pixels = img
+    pixels = img.load()
+    #pixels = img
 
     byte_array = [0]*(16*128)
     index = 0
@@ -47,18 +46,13 @@ def display_image(img, ser):
                 byte_array[index] |= (0 if pixels[(x + bit, y)] == 0 else 1) << (7 - bit)
             index += 1
 
-    #im.save('result.png')
-    #print(binascii.hexlify(bytearray(byte_array)))
-    #print("BAse64:")
     b64 = base64.b64encode(bytearray(byte_array))
-    #print(b64)
 
     ser.write(b64)
     ser.write(b'\r\n')
     ser.flush()
 
 def qrImage(_orderId):
-    #qrImage = "qr-code-logo-" + str(_orderId) + ".png"
     qr = qrcode.QRCode(
         version=5,  #The version parameter is an integer from 1 to 40 that controls the size of the QR Code
                     #the smallest, version 1, is a 21x21 matrix
@@ -68,8 +62,7 @@ def qrImage(_orderId):
     )
     url = 'https://blokko.blockchainadvies.nu/receive-order.html?order=' + str(_orderId)
     qr.add_data(url)
-    #qrImage = qrcode.make(url, image_factory=PymagingImage)
-    qrImage = qrcode.make('Some data here', image_factory=PymagingImage)
+    qrImage = qrcode.make(url, image_factory=PymagingImage)
     print(qrImage)
     return qrImage
 
