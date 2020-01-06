@@ -77,7 +77,6 @@ orderId = 1
 
 def screen_draw():
     # Print QR code with Order ID
-    #img = Image.open("test.png")
     img = Image.open("qr-code-logo-1.png")
     img = img.resize((128, 128))
     #img = qrImage(orderId)
@@ -105,10 +104,6 @@ while True:
 
         try:
             display_image(img, ser)
-
-            l = ser.readline()
-            if len(l) > 0:
-                serial_command(l.decode().strip())
 
         except Exception as e:
             print(str(e))
